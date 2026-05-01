@@ -26,7 +26,7 @@ const ProductCard = ({product}) => {
 
         <div className="mt-3 flex items-center justify-between">
             <div className='flex items-center gap-2'>
-            <Star size={25} className="font-semibold text-gray-700"/>
+            <Star size={22} className="font-semibold text-gray-700"/>
           <span className="font-semibold text-gray-700">
             {product.rating}
           </span>
