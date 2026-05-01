@@ -1,11 +1,11 @@
 import React from 'react';
 
-const ProductsPage = () => {
+const TopBrands = () => {
     return (
         <div>
-            
+           top brand s 
         </div>
     );
 };
 
-export default ProductsPage;
+export default TopBrands;

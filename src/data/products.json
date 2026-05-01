@@ -1,0 +1,112 @@
+[
+  {
+    "id": 1,
+    "name": "UV Protection Sunglasses",
+    "brand": "SunShade",
+    "price": 15,
+    "rating": 4.7,
+    "stock": 10,
+    "description": "Stylish UV protection sunglasses perfect for summer outings.",
+    "image": "https://images.pexels.com/photos/46710/pexels-photo-46710.jpeg",
+    "category": "Accessories"
+  },
+  {
+    "id": 2,
+    "name": "Aloe Vera Sunscreen",
+    "brand": "GlowCare",
+    "price": 22,
+    "rating": 4.8,
+    "stock": 18,
+    "description": "Lightweight sunscreen with aloe vera for daily protection.",
+    "image": "https://images.pexels.com/photos/4041392/pexels-photo-4041392.jpeg",
+    "category": "Skincare"
+  },
+  {
+    "id": 3,
+    "name": "Beach Straw Hat",
+    "brand": "SunnyWear",
+    "price": 12,
+    "rating": 4.5,
+    "stock": 20,
+    "description": "Comfortable straw hat for beach days.",
+    "image": "https://images.pexels.com/photos/984619/pexels-photo-984619.jpeg",
+    "category": "Fashion"
+  },
+  {
+    "id": 4,
+    "name": "Summer Cotton Shirt",
+    "brand": "CoolFit",
+    "price": 28,
+    "rating": 4.6,
+    "stock": 14,
+    "description": "Breathable cotton shirt for hot weather.",
+    "image": "https://images.pexels.com/photos/2983464/pexels-photo-2983464.jpeg",
+    "category": "Outfit"
+  },
+  {
+    "id": 5,
+    "name": "Beach Tote Bag",
+    "brand": "WaveCarry",
+    "price": 18,
+    "rating": 4.4,
+    "stock": 16,
+    "description": "Spacious tote bag for beach essentials.",
+    "image": "https://images.pexels.com/photos/6311614/pexels-photo-6311614.jpeg",
+    "category": "Bags"
+  },
+  {
+    "id": 6,
+    "name": "Hydration Water Bottle",
+    "brand": "AquaFresh",
+    "price": 10,
+    "rating": 4.9,
+    "stock": 25,
+    "description": "Reusable bottle to stay hydrated.",
+    "image": "https://images.pexels.com/photos/6620666/pexels-photo-6620666.jpeg",
+    "category": "Lifestyle"
+  },
+  {
+    "id": 7,
+    "name": "Flip Flop Sandals",
+    "brand": "WalkEase",
+    "price": 14,
+    "rating": 4.3,
+    "stock": 22,
+    "description": "Comfortable flip flops for beach and casual use.",
+    "image": "https://images.pexels.com/photos/19090/pexels-photo.jpg",
+    "category": "Footwear"
+  },
+  {
+    "id": 8,
+    "name": "Cooling Face Mist",
+    "brand": "FreshGlow",
+    "price": 9,
+    "rating": 4.6,
+    "stock": 30,
+    "description": "Instant cooling face mist for summer refreshment.",
+    "image": "https://images.pexels.com/photos/4041391/pexels-photo-4041391.jpeg",
+    "category": "Skincare"
+  },
+  {
+    "id": 9,
+    "name": "Beach Umbrella",
+    "brand": "ShadePro",
+    "price": 35,
+    "rating": 4.7,
+    "stock": 8,
+    "description": "Large beach umbrella for sun protection.",
+    "image": "https://images.pexels.com/photos/1021068/pexels-photo-1021068.jpeg",
+    "category": "Accessories"
+  },
+  {
+    "id": 10,
+    "name": "Summer Shorts",
+    "brand": "BreezeWear",
+    "price": 20,
+    "rating": 4.5,
+    "stock": 19,
+    "description": "Lightweight shorts perfect for hot days.",
+    "image": "https://images.pexels.com/photos/2983463/pexels-photo-2983463.jpeg",
+    "category": "Outfit"
+  }
+]
