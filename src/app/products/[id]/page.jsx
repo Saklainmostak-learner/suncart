@@ -8,7 +8,6 @@ const ProductsPage =async ({ params }) => {
    const { id } = await params;
 
   const product = products.find((item) => item.id === Number(id));
-  console.log(params.id);
 
   if (!product) {
     return (
