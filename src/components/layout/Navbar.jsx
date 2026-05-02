@@ -1,19 +1,46 @@
 "use client";
 
 import Link from "next/link";
-import { Menu, X, Search, SunIcon, UserCircle2Icon } from "lucide-react";
-import { useState } from "react";
-import { useRouter } from "next/navigation";
+import {
+  Menu,
+  X,
+  Search,
+  SunIcon,
+  UserCircle2Icon,
+  ShoppingCart,
+} from "lucide-react";
+import { useEffect, useState } from "react";
+import { usePathname, useRouter } from "next/navigation";
 import { authClient } from "@/lib/auth-client";
 import toast from "react-hot-toast";
 import Image from "next/image";
+import { getCart } from "@/lib/cart";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+  const [cartCount, setCartCount] = useState(0);
   const router = useRouter();
+  const pathname = usePathname();
   const { data: session } = authClient.useSession();
 
   const user = session?.user;
+  const showLogout = pathname === "/my-profile";
+
+  useEffect(() => {
+    const updateCartCount = () => {
+      const cart = getCart();
+      const total = cart.reduce((sum, item) => sum + item.qty, 0);
+      setCartCount(total);
+    };
+
+    updateCartCount();
+
+    window.addEventListener("cartUpdated", updateCartCount);
+
+    return () => {
+      window.removeEventListener("cartUpdated", updateCartCount);
+    };
+  }, []);
 
   const handleLogout = async () => {
     await authClient.signOut();
@@ -23,7 +50,7 @@ const Navbar = () => {
   };
 
   return (
-    <header className="w-full bg-yellow-50 border-b border-orange-100">
+    <header className="w-full bg-yellow-50 border-b border-orange-100 ">
       <nav className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
@@ -60,6 +87,15 @@ const Navbar = () => {
             />
             <Search className="absolute right-2 top-1/2 -translate-y-1/2 w-4  text-yellow-900" />
           </div>
+          <Link href="/cart" className="relative">
+            <ShoppingCart className="w-6 h-6 text-orange-500" />
+
+            {cartCount > 0 && (
+              <span className="absolute -top-2 -right-2 bg-orange-500 text-white text-xs font-bold px-1.5 py-0.5 rounded-full">
+                {cartCount}
+              </span>
+            )}
+          </Link>
 
           {/* Auth */}
           {user ? (
@@ -81,12 +117,14 @@ const Navbar = () => {
                 )}
               </Link>
 
-              <button
-                onClick={handleLogout}
-                className="border border-orange-200 px-4 py-2 rounded-full text-sm font-medium text-yellow-900 hover:bg-orange-500 hover:text-white"
-              >
-                Logout
-              </button>
+              {showLogout && (
+                <button
+                  onClick={handleLogout}
+                  className="border border-orange-200 px-4 py-2 rounded-full text-sm font-medium text-yellow-900 hover:bg-orange-500 hover:text-white"
+                >
+                  Logout
+                </button>
+              )}
             </>
           ) : (
             <Link
@@ -134,6 +172,13 @@ const Navbar = () => {
               className="text-yellow-900 hover:text-orange-500"
             >
               MY PROFILE
+            </Link>
+            <Link
+              href="/cart"
+              onClick={() => setOpen(false)}
+              className="hover:text-orange-500"
+            >
+              CART ({cartCount})
             </Link>
           </div>
         </div>

@@ -6,6 +6,7 @@ import { PackageOpenIcon, Star } from "lucide-react";
 import { redirect } from "next/navigation";
 import { headers } from "next/headers";
 import { auth } from "@/lib/auth";
+import AddToCartBtn from "@/components/shared/page";
 
 const ProductsPage = async ({ params }) => {
   const { id } = await  params;
@@ -72,9 +73,7 @@ const ProductsPage = async ({ params }) => {
 
           <p className="mt-6 text-gray-600 leading-7">{product.description}</p>
 
-          <button className="btn btn-warning rounded-full mt-8 px-10">
-            Place Order
-          </button>
+          <AddToCartBtn product={product} />
         </div>
       </div>
     </section>
