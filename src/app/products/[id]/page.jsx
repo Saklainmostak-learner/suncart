@@ -8,11 +8,10 @@ import { headers } from "next/headers";
 import { auth } from "@/lib/auth";
 
 const ProductsPage = async ({ params }) => {
+  const { id } = await  params;
   const session = await auth.api.getSession({
     headers: await headers(),
   });
-
-  const { id } =  params;
 
   if (!session) {
     redirect(`/login?redirect=/products/${id}`);

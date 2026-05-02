@@ -29,7 +29,7 @@ const redirectPath = searchParams.get("redirect") || "/";
     }
 
     toast.success("Login successful!");
-    router.push("redirectPath");
+    router.push(redirectPath);
     router.refresh();
   };
 

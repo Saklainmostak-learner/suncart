@@ -9,3 +9,20 @@ html {
 body {
   background: #fffdf4;
 }
+
+@keyframes brandSlide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.brand-slide {
+  animation: brandSlide 18s linear infinite;
+}
+
+.brand-slide:hover {
+  animation-play-state: paused;
+}

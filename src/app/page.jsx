@@ -8,8 +8,8 @@ export default function Home() {
     <>
       <HeroSection />
       <PopularProduct />
-      <SummerCareTips />
       <TopBrands />
+      <SummerCareTips />
     </>
   );
 }
