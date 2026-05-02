@@ -3,11 +3,23 @@ import products from "@/data/products.json";
 import Image from "next/image";
 import Link from "next/link";
 import { PackageOpenIcon, Star } from "lucide-react";
+import { redirect } from "next/navigation";
+import { headers } from "next/headers";
+import { auth } from "@/lib/auth";
 
-const ProductsPage =async ({ params }) => {
-   const { id } = await params;
+const ProductsPage = async ({ params }) => {
+  const session = await auth.api.getSession({
+    headers: await headers(),
+  });
+
+  const { id } =  params;
+
+  if (!session) {
+    redirect(`/login?redirect=/products/${id}`);
+  }
 
   const product = products.find((item) => item.id === Number(id));
+  
 
   if (!product) {
     return (

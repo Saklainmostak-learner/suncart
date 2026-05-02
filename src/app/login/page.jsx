@@ -1,11 +1,14 @@
 "use client";
 import { authClient } from "@/lib/auth-client";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import React, { useState } from "react";
 import toast from "react-hot-toast";
 
+
 const LogInPage = () => {
+  const searchParams = useSearchParams();
+const redirectPath = searchParams.get("redirect") || "/";
   const router = useRouter();
   const [form, setForm] = useState({
     email: "",
@@ -26,7 +29,7 @@ const LogInPage = () => {
     }
 
     toast.success("Login successful!");
-    router.push("/");
+    router.push("redirectPath");
     router.refresh();
   };
 
