@@ -32,5 +32,6 @@ export const auth = betterAuth({
   trustedOrigins: [
     "http://localhost:3000",
     "https://suncart-5exw.vercel.app",
+    process.env.NEXT_PUBLIC_APP_URL,
   ],
 });
