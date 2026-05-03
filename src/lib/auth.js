@@ -1,8 +1,12 @@
 import { betterAuth } from "better-auth";
-import Database from "better-sqlite3";
+import { MongoClient } from "mongodb";
+import { mongodbAdapter } from "better-auth/adapters/mongodb";
+
+const client = new MongoClient(process.env.MONGODB_URI);
+const db = client.db("suncart");
 
 export const auth = betterAuth({
-  database: new Database("./sqlite.db"),
+  database: mongodbAdapter(db),
 
   baseURL: process.env.BETTER_AUTH_URL,
   secret: process.env.BETTER_AUTH_SECRET,

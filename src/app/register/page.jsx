@@ -16,14 +16,19 @@ const RegisterPage = () => {
   const handleRegister = async (e) => {
     e.preventDefault();
 
-    const {data, error } = await authClient.signUp.email({
+    const { data, error } = await authClient.signUp.email({
       name: form.name,
       email: form.email,
       password: form.password,
-      image: form.image||undefined,
+      image: form.image || undefined,
     });
-  
+
     if (error) {
+      if (error) {
+        console.log("REGISTER ERROR FULL:", JSON.stringify(error, null, 2));
+        toast.error(error.message || "Registration failed");
+        return;
+      }
       toast.error(error.message || "Registration failed");
       return;
     }
