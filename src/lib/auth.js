@@ -2,14 +2,13 @@ import { betterAuth } from "better-auth";
 import { MongoClient } from "mongodb";
 import { mongodbAdapter } from "better-auth/adapters/mongodb";
 
-const client = new MongoClient(process.env.MONGODB_URI);
-const connectDB = async () => {
-  if (!client.topology?.isConnected()) {
-    await client.connect();
-  }
-};
+const mongoUri = process.env.MONGODB_URI;
 
-await connectDB();
+if (!mongoUri) {
+  throw new Error("Missing MONGODB_URI environment variable");
+}
+
+const client = new MongoClient(process.env.MONGODB_URI);
 
 const db = client.db("suncart");
 
