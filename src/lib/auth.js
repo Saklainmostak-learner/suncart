@@ -3,6 +3,14 @@ import { MongoClient } from "mongodb";
 import { mongodbAdapter } from "better-auth/adapters/mongodb";
 
 const client = new MongoClient(process.env.MONGODB_URI);
+const connectDB = async () => {
+  if (!client.topology?.isConnected()) {
+    await client.connect();
+  }
+};
+
+await connectDB();
+
 const db = client.db("suncart");
 
 export const auth = betterAuth({
@@ -24,6 +32,6 @@ export const auth = betterAuth({
 
   trustedOrigins: [
     "http://localhost:3000",
-    process.env.NEXT_PUBLIC_APP_URL,
+    "https://suncart-5exw.vercel.app",
   ],
 });
