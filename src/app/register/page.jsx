@@ -25,7 +25,6 @@ const RegisterPage = () => {
 
     if (error) {
       if (error) {
-        console.log("REGISTER ERROR:", JSON.stringify(error, null, 2));
         toast.error(error.message || "Registration failed");
         return;
       }
