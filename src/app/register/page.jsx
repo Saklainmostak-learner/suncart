@@ -22,8 +22,7 @@ const RegisterPage = () => {
       password: form.password,
       image: form.image||undefined,
     });
-    console.log("register data", data);
-    console.log("register error", JSON.stringify(error, null, 2));
+  
     if (error) {
       toast.error(error.message || "Registration failed");
       return;

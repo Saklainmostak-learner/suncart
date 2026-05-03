@@ -1,6 +1,6 @@
-"use client"
+"use client";
 import { clearCart, getCart, removeFromCart } from "@/lib/cart";
-import { Trash2 } from "lucide-react";
+import { Box, Trash2 } from "lucide-react";
 import React, { useEffect, useState } from "react";
 
 const CartPage = () => {
@@ -20,7 +20,9 @@ const CartPage = () => {
       <h1 className="text-3xl font-bold mb-6 text-yellow-900">Your Cart</h1>
 
       {cart.length === 0 ? (
-        <p>Cart is empty</p>
+        <p className="text-orange-600 font-semibold flex gap-2">
+          <Box/>
+          Cart is empty</p>
       ) : (
         <>
           <div className="space-y-4">
@@ -37,18 +39,29 @@ const CartPage = () => {
                 </div>
 
                 <button
-                  onClick={() => removeFromCart(item.id)}
+                  onClick={() => {
+                    removeFromCart(item.id);
+                    load();
+                  }}
                   className="text-red-500"
                 >
-                  <Trash2 size={20}/>
+                  <Trash2 size={20} />
                 </button>
               </div>
             ))}
           </div>
 
-          <div className="mt-6 text-xl font-bold text-yellow-900">Total: ${total}</div>
+          <div className="mt-6 text-xl font-bold text-yellow-900">
+            Total: ${total}
+          </div>
 
-          <button onClick={clearCart} className="btn btn-error mt-4">
+          <button
+            onClick={() => {
+              clearCart();
+              load();
+            }}
+            className="btn btn-error mt-4"
+          >
             Clear Cart
           </button>
         </>

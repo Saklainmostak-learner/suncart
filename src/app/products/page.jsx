@@ -2,7 +2,7 @@ import ProductCard from '@/components/shared/ProductCard';
 import products from "@/data/products.json";
 import React from 'react';
 
-const page = () => {
+const ProductPage = () => {
     return (
        <section className="max-w-7xl mx-auto px-4 md:px-6 py-16">
       <div className="text-center mb-10">
@@ -24,4 +24,4 @@ const page = () => {
     );
 };
 
-export default page;
+export default ProductPage;

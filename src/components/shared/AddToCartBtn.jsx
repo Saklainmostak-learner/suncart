@@ -10,7 +10,7 @@ const AddToCartBtn = ({product}) => {
         addToCart(product);
         toast.success("Added to cart");
       }}
-      className="btn btn-warning rounded-full mt-8 px-10"
+      className="w-full border border-orange-300 text-orange-500 py-2 rounded-full hover:bg-orange-500 hover:text-white transition"
     >
       Add to Cart
     </button>

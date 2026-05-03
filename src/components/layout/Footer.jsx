@@ -37,17 +37,17 @@ const Footer = () => {
           <h3 className="text-xl font-bold mb-4">Social Links</h3>
 
           <div className="flex gap-3 mt-5">
-            <a href="https://facebook.com" target="_blank">
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
               <span className="h-10 w-10 rounded-full bg-orange-500 flex items-center justify-center">
                 <FaFacebookF size={18} />
               </span>
             </a>
-            <a href="https://instagram.com" target="_blank">
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
               <span className="h-10 w-10 rounded-full bg-orange-500 flex items-center justify-center">
                 <FaInstagram size={18} />
               </span>
             </a>
-            <a href="https://twitter.com" target="_blank">
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
               <span className="h-10 w-10 rounded-full bg-orange-500 flex items-center justify-center">
                 <FaTwitter size={18} />
               </span>

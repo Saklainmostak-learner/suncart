@@ -1,5 +1,6 @@
 "use client";
 import { authClient } from '@/lib/auth-client';
+import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import React, { useState } from 'react';
 import toast from 'react-hot-toast';
@@ -13,8 +14,15 @@ const UpdateProfile = () => {
 
   if (isPending) return <div className="min-h-screen flex items-center justify-center">Loading...</div>;
 
-  if (!session) return <div className="min-h-screen flex items-center justify-center">Please Login</div>;
-
+  if (!session) {
+  return (
+    <div className="min-h-screen flex items-center justify-center">
+      <Link href="/login" className="btn btn-warning rounded-full">
+        Please Login
+      </Link>
+    </div>
+  );
+}
   const handleUpdate = async (e) => {
     e.preventDefault();
 

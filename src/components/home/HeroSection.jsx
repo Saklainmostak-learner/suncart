@@ -7,17 +7,17 @@ const slides = [
   {
     title: "Summer Collection 2026",
     desc: "Upgrade your lifestyle with trending products.",
-    img: "https://images.pexels.com/photos/46710/pexels-photo-46710.jpeg",
+    img: "https://i.ibb.co.com/BHGSwfpL/2766975-13949.jpg",
   },
   {
     title: "Hot Deals 🔥",
     desc: "Get best discounts before stock ends.",
-    img: "https://images.pexels.com/photos/298863/pexels-photo-298863.jpeg",
+    img: "https://i.ibb.co.com/r2pcwmK8/422328086-c92f53d0-634a-4941-8f0b-c00e2da809d6.jpg",
   },
   {
     title: "Premium Accessories",
     desc: "Style meets comfort.",
-    img: "https://images.pexels.com/photos/19090/pexels-photo.jpg",
+    img: "https://i.ibb.co.com/1YCrHq40/Screenshot-2026-05-03-060828.png",
   },
 ];
 

@@ -4,11 +4,11 @@
 
 html {
   scroll-behavior: smooth;
-};
+}
 
 body {
   background: #fffdf4;
-};
+}
 
 @keyframes brandSlide {
   from {
@@ -25,7 +25,7 @@ body {
 
 .brand-slide:hover {
   animation-play-state: paused;
-};
+}
 @keyframes fadeIn {
   from {
     opacity: 0;

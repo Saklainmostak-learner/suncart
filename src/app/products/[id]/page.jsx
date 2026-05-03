@@ -6,7 +6,7 @@ import { PackageOpenIcon, Star } from "lucide-react";
 import { redirect } from "next/navigation";
 import { headers } from "next/headers";
 import { auth } from "@/lib/auth";
-import AddToCartBtn from "@/components/shared/page";
+
 
 const ProductsPage = async ({ params }) => {
   const { id } = await  params;
@@ -32,7 +32,7 @@ const ProductsPage = async ({ params }) => {
   return (
     <section className="max-w-7xl mx-auto px-4 md:px-6 py-16">
       <Link href="/" className="btn btn-outline rounded-full mb-8 bg-[#e5a600]">
-        ← Back Home
+        ← Back
       </Link>
 
       <div className="grid md:grid-cols-2 gap-10 items-center bg-white rounded-3xl border border-orange-100 shadow-sm p-6 md:p-10">
@@ -72,8 +72,6 @@ const ProductsPage = async ({ params }) => {
           </div>
 
           <p className="mt-6 text-gray-600 leading-7">{product.description}</p>
-
-          <AddToCartBtn product={product} />
         </div>
       </div>
     </section>

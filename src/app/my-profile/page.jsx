@@ -1,5 +1,6 @@
 "use client";
 import { authClient } from "@/lib/auth-client";
+import { User2 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -39,7 +40,7 @@ const MyProfile = () => {
             />
           ) : (
             <div className="h-full flex items-center justify-center text-4xl">
-              👤
+              <User2 size={50} className="text-yellow-950" />
             </div>
           )}
         </div>
